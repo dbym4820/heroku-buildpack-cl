@@ -118,7 +118,7 @@ echo "export BUILD_DIR" >> $ENVVARS
 
 touch $BUILD_DIR/lispapp
 echo "###########################"
-ls -la $BUILD_DIR | echo
+ls -la $CL_DIR | echo
 echo "###########################"
 echo "-----> Starting build"
 case $CL_IMPL in
