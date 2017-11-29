@@ -43,7 +43,8 @@
   ;; Start the web server
   (let ((port (parse-integer (getenv "PORT"))))
     (format t "Listening on port ~A~%" port)
-    (hunchentoot:start *80-acceptor*)
+    (when (fins-package :hunchentoot)
+      (hunchentoot:start *80-acceptor*))
     (loop (sleep 60))))
 
 ;;; Load the application from sources
