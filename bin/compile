@@ -50,10 +50,7 @@ echo "-----> Getting patched versions of libraries"
 
 mkdir $CACHE_DIR/repos
 pushd $CACHE_DIR/repos
-<<<<<<< HEAD
-=======
 
->>>>>>> refs/remotes/origin/master
 popd
 
 mkdir -p $1/.profile.d
