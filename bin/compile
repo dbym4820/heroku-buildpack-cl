@@ -49,7 +49,7 @@ echo "ccl installed" | indent
 
 echo "-----> Getting patched versions of libraries"
 
-mkdir $CACHE_DIR/repos
+mkdir -p $CACHE_DIR/repos
 pushd $CACHE_DIR/repos
 
 popd
@@ -71,5 +71,5 @@ echo "-----> Build finished"
 #APPLICATION_LAUNCHER="$BUILD_DIR/lispapp"
 #touch $APPLICATION_LAUNCHER
 cd $BUILD_DIR
-chmod a+x lispapp# $APPLICATION_LAUNCHER
+chmod a+x lispapp # $APPLICATION_LAUNCHER
 
