@@ -1514,7 +1514,7 @@ the indexes in the header accordingly."
     (rename-file tmpfile file)))
 
 (defvar *asdf-url* "https://common-lisp.net/project/asdf/archives/asdf.lisp")
-(defvar *quicklisp-tar-url* "http://beta.quicklisp.org/quickstart/quicklisp.tar")
+(defvar *quicklisp-tar-url* "https://common-lisp.net/project/asdf/archives/asdf.tar.gz")
 (defvar *setup-url* "http://beta.quicklisp.org/quickstart/setup.lisp")
 (defvar *help-message*
   (format nil "~&~%  ==== quicklisp quickstart install help ====~%~%    ~
