@@ -30,7 +30,6 @@
   (dolist (d directories)
     (push (make-pathname :directory d) asdf:*central-registry*)))
 
-(ql:quickload :dusque)
 
 ;;; App can redefine this to do runtime initializations
 (defun initialize-application ()

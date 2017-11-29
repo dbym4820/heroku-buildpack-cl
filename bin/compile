@@ -71,7 +71,7 @@ case $CL_WEBSERVER in
 
     if [ -d $CACHE_DIR/repos/dusque ]; then
          echo 'dusque already present'
-         pushd heroku-dusque
+         pushd dusque
          git pull origin master
          popd
     else
