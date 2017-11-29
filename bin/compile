@@ -107,6 +107,10 @@ echo "$CL_IMPL installed" | indent
 mkdir -p $1/.profile.d
 ENVVARS=$1/.profile.d/build-env.sh
 
+export BUILDPACK_DIR
+export CACHE_DIR
+export BUILD_DIR
+
 echo "export BUILDPACK_DIR" >> $ENVVARS
 echo "export CACHE_DIR" >> $ENVVARS
 echo "export BUILD_DIR" >> $ENVVARS
