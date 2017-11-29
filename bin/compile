@@ -64,15 +64,12 @@ echo "export CACHE_DIR=$CACHE_DIR" >> $ENVVARS
 echo "export BUILD_DIR=$BUILD_DIR" >> $ENVVARS
 echo "export CCL_DEFAULT_DIRECTORY=$CCL_DIR" >> $ENVVARS
 
-mkdir -p ~/tmp
-mv ~/* ~/tmp/
-
 echo "-----> Starting build"
 echo "\$CCL_~/ccl/scripts/ccl64 -l $BUILDPACK_DIR/setup/compile.lisp" >> $ENVVARS
 echo "-----> Build finished"
 
-#APPLICATION_LAUNCHER="$BUILD_DIR/lispapp"
-#touch $APPLICATION_LAUNCHER
+APPLICATION_LAUNCHER="$BUILD_DIR/lispapp"
+touch $APPLICATION_LAUNCHER
 cd $BUILD_DIR
 chmod a+x ~/tmp/lispapp # $APPLICATION_LAUNCHER
 
