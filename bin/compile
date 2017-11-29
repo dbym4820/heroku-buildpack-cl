@@ -81,7 +81,7 @@ echo "export BUILD_DIR" >> $ENVVARS
 echo "export CCL_DEFAULT_DIRECTORY={$CCL_DIR}" >> $ENVVARS
 
 echo "-----> Starting build"
-$CCL_DEFAULT_DIRECTORY/scripts/ccl64 -l "$BUILDPACK_DIR/setup/compile.lisp"
+echo "{$CCL_DEFAULT_DIRECTORY}/scripts/ccl64 -l \"{$BUILDPACK_DIR}/setup/compile.lisp\"" >> $ENVVARS
 echo "-----> Build finished"
 
 touch $BUILD_DIR/lispapp

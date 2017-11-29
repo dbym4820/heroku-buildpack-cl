@@ -1,11 +1,7 @@
 #!/bin/sh
 
-
-
 cat << EOF
 ---
-addons:
-  - shared-database:5mb
 config_vars:
   PATH: /usr/bin:/bin
   CCL_DEFAULT_DIRECTORY: ccl
