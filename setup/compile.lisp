@@ -18,7 +18,7 @@
 	(funcall (symbol-function (find-symbol "INSTALL" (find-package "QUICKLISP-QUICKSTART")))
 		 :path (make-pathname :directory (pathname-directory ql-setup))))))
 
-(asdf:clear-system "acl-compat")
+
 
 ;;; Load all .asd files in the repos subdirectory.  The compile script puts
 ;;; several systems in there, because we are using versions that are 
