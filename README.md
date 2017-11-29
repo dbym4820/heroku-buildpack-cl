@@ -26,6 +26,8 @@ git push heroku master
 
 ```sh:
 
+heroku apps:destroy --app heroku-dusque
+
 heroku create heroku-dusque -s cedar --buildpack https://github.com/dbym4820/heroku-buildpack-commonlisp.git
 
 heroku config:add CL_IMPL=ccl --app heroku-dusque

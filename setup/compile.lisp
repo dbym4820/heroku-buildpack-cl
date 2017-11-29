@@ -13,9 +13,10 @@
   (if (probe-file ql-setup)
       (load ql-setup)
       (progn
-	(load (make-pathname :directory (append *buildpack-dir* '("lib")) :defaults "quicklisp.lisp"))
-	(funcall (symbol-function (find-symbol "INSTALL" (find-package "QUICKLISP-QUICKSTART")))
-		 :path (make-pathname :directory (pathname-directory ql-setup))))))
+	(load (make-pathname :directory (append *buildpack-dir* '("lib/quicklisp")) :defaults "setup.lisp"))
+	;; (funcall (symbol-function (find-symbol "INSTALL" (find-package "QUICKLISP-QUICKSTART")))
+	;; 	 :path (make-pathname :directory (pathname-directory ql-setup)))
+	)))
 
 
 ;;; Load all .asd files in the repos subdirectory.  The compile script puts
