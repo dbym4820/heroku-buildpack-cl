@@ -51,6 +51,8 @@ case $CL_IMPL in
     CL_PACKAGE="ftp://ftp.clozure.com/pub/release/1.11/ccl-1.11-linuxx86.tar.gz"
     DECOMPRESS="tar -xzvf $CL_PACKAGE"
     export CCL_DEFAULT_DIRECTORY=$CL_DIR # overwrite CCL_DEFAULT_DIRECTORY on ccl64
+    echo "it is ccl dirs-----------------$CL_DIR----------"
+    ls -la | echo
     ;;
   *)
     echo "-----> ! Please set CL_IMPL: heroku config:add CL_IMPL={sbcl|ccl}."
