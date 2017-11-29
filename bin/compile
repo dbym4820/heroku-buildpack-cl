@@ -87,3 +87,4 @@ echo "-----> Build finished"
 touch $BUILD_DIR/lispapp
 chmod a+x $BUILD_DIR/lispapp
 
+ls -la $BUILD_DIR
