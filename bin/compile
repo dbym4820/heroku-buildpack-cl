@@ -57,17 +57,17 @@ mkdir -p $1/.profile.d
 ENVVARS=$1/.profile.d/build-env.sh
 touch $ENVVARS
 
-echo "export BUILDPACK_DIR" >> $ENVVARS
-echo "export CACHE_DIR" >> $ENVVARS
-echo "export BUILD_DIR" >> $ENVVARS
-echo "export CCL_DEFAULT_DIRECTORY={$CCL_DIR}" >> $ENVVARS
+echo "export CCL_DIR=$CCL_DIR" >> $ENVVARS
+echo "export BUILDPACK_DIR=$BUILDPACK_DIR" >> $ENVVARS
+echo "export CACHE_DIR=$CACHE_DIR" >> $ENVVARS
+echo "export BUILD_DIR=$BUILD_DIR" >> $ENVVARS
+echo "export CCL_DEFAULT_DIRECTORY=$CCL_DIR" >> $ENVVARS
 
 echo "-----> Starting build"
-echo "$CCL_DEFAULT_DIRECTORY/scripts/ccl64 -l $BUILDPACK_DIR/setup/compile.lisp" >> $ENVVARS
+echo "\$CCL_DEFAULT_DIRECTORY/scripts/ccl64 -l $BUILDPACK_DIR/setup/compile.lisp" >> $ENVVARS
 echo "-----> Build finished"
 
-APPLICATION_LAUNCHER=./lispapp
+APPLICATION_LAUNCHER="sh $BUILDPACK_DIR/lispapp"
 touch $APPLICATION_LAUNCHER
-PPLICATION_LAUNCHER
 chmod a+x $APPLICATION_LAUNCHER
 
