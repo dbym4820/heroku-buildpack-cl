@@ -1513,7 +1513,7 @@ the indexes in the header accordingly."
     (fetch url tmpfile)
     (rename-file tmpfile file)))
 
-(defvar *asdf-url* "http://beta.quicklisp.org/quickstart/asdf.lisp")
+(defvar *asdf-url* "https://common-lisp.net/project/asdf/archives/asdf.lisp")
 (defvar *quicklisp-tar-url* "http://beta.quicklisp.org/quickstart/quicklisp.tar")
 (defvar *setup-url* "http://beta.quicklisp.org/quickstart/setup.lisp")
 (defvar *help-message*
