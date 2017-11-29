@@ -119,7 +119,7 @@ touch $BUILD_DIR/lispapp
 echo "-----> Starting build"
 case $CL_IMPL in
   sbcl) sh $CL_DIR/sbcl-1.2.13-x86-64-linux/run-sbcl.sh --load "$BUILDPACK_DIR/setup/compile.lisp";;
-  ccl) $CL_DIR/scripts/ccl64 -l "$BUILDPACK_DIR/setup/compile.lisp";;
+  ccl) $CCL_DEFAULT_DIRECTORY/scripts/ccl64 -l "$BUILDPACK_DIR/setup/compile.lisp";;
 esac
 echo "-----> Build finished"
 
