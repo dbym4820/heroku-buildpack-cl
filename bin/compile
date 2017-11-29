@@ -70,7 +70,7 @@ case $CL_WEBSERVER in
     pushd $CACHE_DIR/repos
 
     if [ -d $CACHE_DIR/repos/heroku-dusque ]; then
-         echo 'wuwei already present'
+         echo 'dusque already present'
          pushd wuwei
          git pull origin master
          popd
@@ -78,7 +78,7 @@ case $CL_WEBSERVER in
         git clone git://github.com/dbym4820/heroku-dusque.git
     fi
     if [ -d $CACHE_DIR/repos/hunchentoot ]; then
-         echo 'wuwei already present'
+         echo 'hunchentoot already present'
          pushd wuwei
          git pull origin master
          popd
