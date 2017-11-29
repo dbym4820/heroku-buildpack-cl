@@ -12,12 +12,13 @@
 (let ((ql-setup (make-pathname :directory (append *cache-dir* '("quicklisp")) :defaults "setup.lisp")))
   (if (probe-file ql-setup)
       (load ql-setup)
+      (asdf:asdf-version)
+
       (progn
 	(load (make-pathname :directory (append *buildpack-dir* '("lib")) :defaults "quicklisp.lisp"))
 	(funcall (symbol-function (find-symbol "INSTALL" (find-package "QUICKLISP-QUICKSTART")))
 		 :path (make-pathname :directory (pathname-directory ql-setup)))
 	)))
-
 
 ;;; Load all .asd files in the repos subdirectory.  The compile script puts
 ;;; several systems in there, because we are using versions that are 
@@ -35,7 +36,7 @@
 (defun initialize-application ()
   )
 
-(asdf:asdf-version)
+
 ;;; Default toplevel, app can redefine.
 (defun heroku-toplevel ()
   (initialize-application)
