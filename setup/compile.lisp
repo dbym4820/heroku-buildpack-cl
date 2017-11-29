@@ -7,12 +7,12 @@
 ;;; Tell ASDF to store binaries in the cache dir
 (ccl:setenv "XDG_CACHE_HOME" (concatenate 'string (getenv "CACHE_DIR") "/.asdf/"))
 
-(load (make-pathname :directory (append *cache-dir* '("quicklisp")) :defaults "asdf.lisp"))
+(load (compile-file (make-pathname :directory (append *cache-dir* '("quicklisp")) :defaults "asdf.lisp")))
 (require :asdf)
 
 (let ((ql-setup (make-pathname :directory (append *cache-dir* '("quicklisp")) :defaults "setup.lisp")))
   (if (probe-file ql-setup)
-      (load ql-setup)
+      nil;(load ql-setup)
       (progn
 	(load (make-pathname :directory *cache-dir* :defaults "quicklisp.lisp"))
 	(funcall (symbol-function (find-symbol "INSTALL" (find-package "QUICKLISP-QUICKSTART")))
