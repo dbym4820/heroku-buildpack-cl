@@ -15,9 +15,9 @@
 ;;;;
 
 (cl:in-package #:cl-user)
-(cl:defpackage #:qlqs-user
+(cl:defpackage #:quicklis-quickstart
   (:use #:cl))
-(cl:in-package #:qlqs-user)
+(cl:in-package #:quicklis-quickstart)
 
 (defpackage #:qlqs-info
   (:export #:*version*))
