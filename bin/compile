@@ -44,7 +44,7 @@ echo "-----> CL_IMPL: $CL_IMPL"
 case $CL_IMPL in
   sbcl)
     S3_BUCKET="sbcl-heroku"
-    CL_PACKAGE="https://ccl.clozure.com/ftp/pub/release/1.11/ccl-1.11-linuxx86.tar.gz"
+    CL_PACKAGE="https://sourceforge.net/projects/sbcl/files/sbcl/1.2.7/sbcl-1.2.7-x86-linux-binary.tar.bz2"
     DECOMPRESS="tar jxvf - -C $CL_DIR"
     ;;
   ccl)
