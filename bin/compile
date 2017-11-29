@@ -63,11 +63,6 @@ echo "-----> CL_WEBSERVER: $CL_WEBSERVER"
 echo "-----> Getting patched versions of libraries"
 
 mkdir $CACHE_DIR/repos    # should be under an if to avoid error
-
-echo "###########################"
-ls -la $CACHE_DIR | echo
-echo "###########################"
-
 pushd $CACHE_DIR/repos
 
 # if [ -d $CACHE_DIR/repos/dusque ]; then
@@ -95,6 +90,11 @@ echo "-----> Installing $CL_IMPL"
 if [ ! -d $CL_DIR ]; then
     echo "-----> Fetching $CL_IMPL"
     mkdir -p $CL_DIR  && curl $CL_PACKAGE -s -o -  | $DECOMPRESS
+
+    echo "###########################"
+    ls -la $CL_DIR | echo
+    echo "###########################"
+
 fi
 
 # add to slug
