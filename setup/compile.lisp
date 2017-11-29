@@ -7,11 +7,12 @@
 ;;; Tell ASDF to store binaries in the cache dir
 (ccl:setenv "XDG_CACHE_HOME" (concatenate 'string (getenv "CACHE_DIR") "/.asdf/"))
 
-(let ((quicklisp-init (make-pathname :directory (append *buildpack-dir* '("lib") '("quicklisp")) :defaults "setup.lisp")))
+
+(require :asdf)
+(let ((quicklisp-init (make-pathname :directory (append *buildpack-dir* '("quicklisp")) :defaults "setup.lisp")))
   ;;(when (probe-file quicklisp-init)
     (load quicklisp-init))
 
-(require :asdf)
 
 
 ;;; Load all .asd files in the repos subdirectory.  The compile script puts
