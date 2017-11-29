@@ -14,8 +14,8 @@
       (load ql-setup)
       (progn
 	(load (make-pathname :directory (append *buildpack-dir* '("lib")) :defaults "quicklisp.lisp"))
-	;; (funcall (symbol-function (find-symbol "INSTALL" (find-package "QUICKLISP-QUICKSTART")))
-	;; 	 :path (make-pathname :directory (pathname-directory ql-setup)))
+	(funcall (symbol-function (find-symbol "INSTALL" (find-package "QUICKLISP-QUICKSTART")))
+		 :path (make-pathname :directory (pathname-directory ql-setup)))
 	)))
 
 
