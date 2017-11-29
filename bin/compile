@@ -33,10 +33,10 @@ import_env RESET_CACHE
 CL_DIR="$BUILDPACK_DIR/$CL_IMPL"
 echo "-----> compile params: $BUILD_DIR $CACHE_DIR $ENV_DIR"
 
-if [ $RESET_CACHE ]; then
-  echo "-----> flushing cache"
-  rm -rf $CACHE_DIR/*
-fi
+# if [ $RESET_CACHE ]; then
+#   echo "-----> flushing cache"
+#   rm -rf $CACHE_DIR/*
+# fi
 
 echo "-----> CL_IMPL: $CL_IMPL"
 
@@ -116,10 +116,11 @@ echo "export BUILDPACK_DIR" >> $ENVVARS
 echo "export CACHE_DIR" >> $ENVVARS
 echo "export BUILD_DIR" >> $ENVVARS
 
-touch $BUILD_DIR/lispapp
+
 echo "###########################"
 ls -la $CL_DIR | echo
 echo "###########################"
+touch $BUILD_DIR/lispapp
 echo "-----> Starting build"
 case $CL_IMPL in
   sbcl) sh $CL_DIR/sbcl-1.2.13-x86-64-linux/run-sbcl.sh --load "$BUILDPACK_DIR/setup/compile.lisp";;
