@@ -96,7 +96,7 @@ esac
 echo "-----> Installing $CL_IMPL"
 if [ ! -d $CL_DIR ]; then
     echo "-----> Fetching $CL_IMPL"
-    mkdir -p $CL_DIR  && curl $CL_PACKAGE -s -o -  | $DECOMPRESS
+    mkdir -p $CL_DIR  && wget $CL_PACKAGE | $DECOMPRESS
 fi
 
 # add to slug
