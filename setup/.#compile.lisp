@@ -1,1 +1,0 @@
-tomoki@aburayachikinoMac-Pro.local.82194
