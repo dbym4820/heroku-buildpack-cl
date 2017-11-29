@@ -15,9 +15,9 @@
 ;;;;
 
 (cl:in-package #:cl-user)
-(cl:defpackage #:quicklisp-quickstart
+(cl:defpackage #:qlqs-user
   (:use #:cl))
-(cl:in-package #:quicklisp-quickstart)
+(cl:in-package #:qlqs-user)
 
 (defpackage #:qlqs-info
   (:export #:*version*))
@@ -1742,7 +1742,7 @@ the indexes in the header accordingly."
        (lambda ()
          (let ((client-url (or client-url
                                (and client-version
-                                    (client-info-url-from-version client-version))
+                                    (client-info-url-from-version 3.2.1))
                                *client-info-url*))
                ;; It's ok for dist-url to be nil; there's a default in
                ;; the client
