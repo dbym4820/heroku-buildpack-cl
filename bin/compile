@@ -19,8 +19,9 @@ function indent() {
 S3_BUCKET="cl-heroku"
 CCL_PACKAGE="http://${S3_BUCKET}.s3.amazonaws.com/ccl-1.7.tgz"
 
+#mkdir 
 # parse and derive params
-BUILDPACK_DIR=$(cd $(dirname $0); pwd)/.. # absolute path of buildpack
+BUILDPACK_DIR=$(cd $(dirname $0); pwd) # absolute path of buildpack
 BUILD_DIR=$1
 CACHE_DIR=$2
 
