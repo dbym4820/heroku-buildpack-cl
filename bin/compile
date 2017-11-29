@@ -69,6 +69,6 @@ echo "-----> Starting build"
 echo "-----> Build finished"
 
 APPLICATION_LAUNCHER=$BUILD_DIR/lispapp
-touch $APPLICATION_LAUNCHER
+#touch $APPLICATION_LAUNCHER
 chmod a+x $APPLICATION_LAUNCHER
 
