@@ -32,7 +32,10 @@
 
 ;;; App can redefine this to do runtime initializations
 (defun initialize-application ()
-  )
+  (unless (find-package :hunchentoot)
+    (ql:quickload :hunchentoot))
+  (defparameter *80-acceptor* (make-instance 'hunchentoot:acceptor)))
+
 
 ;;; Default toplevel, app can redefine.
 (defun heroku-toplevel ()
@@ -40,8 +43,7 @@
   ;; Start the web server
   (let ((port (parse-integer (getenv "PORT"))))
     (format t "Listening on port ~A~%" port)
-    (funcall (symbol-function (find-symbol "START" (find-package "NET.ASERVE")))
-	     :port port)
+    (hunchentoot:start *80-acceptor*)
     (loop (sleep 60))))
 
 ;;; Load the application from sources
@@ -51,6 +53,6 @@
 ;;; Save the application as an image
 (let ((app-file (format nil "~A/lispapp" (getenv "BUILD_DIR")))) ;must match path specified in bin/release
   (format t "Saving to ~A~%" app-file)
-  (save-application app-file
+  (ccl:save-application app-file
 		    :prepend-kernel t
 		    :toplevel-function #'heroku-toplevel))
