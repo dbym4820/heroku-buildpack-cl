@@ -83,7 +83,7 @@ case $CL_WEBSERVER in
          git pull origin master
          popd
     else
-        git clone git://github.com/edicl/hunchentoote.git
+        git clone git://github.com/edicl/hunchentoot.git
     fi
 
     popd
