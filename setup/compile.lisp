@@ -30,11 +30,11 @@
   (dolist (d directories)
     (push (make-pathname :directory d) asdf:*central-registry*)))
 
+(ql:quickload :dusque)
+
 ;;; App can redefine this to do runtime initializations
 (defun initialize-application ()
-  (unless (find-package :hunchentoot)
-    (ql:quickload :hunchentoot))
-  (defparameter *80-acceptor* (make-instance 'hunchentoot:acceptor)))
+  )
 
 
 ;;; Default toplevel, app can redefine.
