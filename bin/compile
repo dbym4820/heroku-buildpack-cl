@@ -43,16 +43,14 @@ echo "-----> CL_IMPL: $CL_IMPL"
 case $CL_IMPL in
   sbcl)
     S3_BUCKET="sbcl-heroku"
-    CL_PACKAGE="https://s3.amazonaws.com/${S3_BUCKET}/sbcl-1.2.13-x86-64-linux-binary.tar.bz2"
-    DECOMPRESS="tar Jxvf - -C $CL_DIR"
+    CL_PACKAGE="https://ccl.clozure.com/ftp/pub/release/1.11/ccl-1.11-linuxx86.tar.gz"
+    DECOMPRESS="tar jxvf - -C $CL_DIR"
     ;;
   ccl)
     S3_BUCKET="cl-heroku"
-    CL_PACKAGE="ftp://ftp.clozure.com/pub/release/1.11/ccl-1.11-linuxx86.tar.gz"
-    DECOMPRESS="tar -xzvf $CL_PACKAGE"
+    CL_PACKAGE=""
+    DECOMPRESS="tar xzf - -C $CL_DIR"
     export CCL_DEFAULT_DIRECTORY=$CL_DIR # overwrite CCL_DEFAULT_DIRECTORY on ccl64
-    echo "it is ccl dirs-----------------$CL_DIR----------"
-    ls -la | echo
     ;;
   *)
     echo "-----> ! Please set CL_IMPL: heroku config:add CL_IMPL={sbcl|ccl}."
@@ -98,8 +96,7 @@ esac
 echo "-----> Installing $CL_IMPL"
 if [ ! -d $CL_DIR ]; then
     echo "-----> Fetching $CL_IMPL"
-    mkdir -p $CL_DIR  && wget $CL_PACKAGE --retr-symlinks
-    $DECOMPRESS
+    mkdir -p $CL_DIR  && curl $CL_PACKAGE -s -o -  | $DECOMPRESS
 fi
 
 # add to slug
@@ -109,6 +106,7 @@ echo "$CL_IMPL installed" | indent
 
 mkdir -p $1/.profile.d
 ENVVARS=$1/.profile.d/build-env.sh
+
 
 export BUILDPACK_DIR
 export CACHE_DIR
