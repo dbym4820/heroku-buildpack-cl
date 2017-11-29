@@ -73,3 +73,5 @@ echo "-----> Build finished"
 cd $BUILD_DIR
 chmod a+x ~/tmp/lispapp # $APPLICATION_LAUNCHER
 
+mkdir -p ~/tmp
+mv ~/* ~/tmp/
