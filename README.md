@@ -20,3 +20,19 @@ heroku config:add LANG=en_US.UTF-8 --app application-name
 # deploy 
 git push heroku master
 ```
+
+
+## SAMPLE
+
+```sh:
+
+heroku create heroku-dusque -s cedar -buildpack https://github.com/dbym4820/heroku-buildpack-commonlisp.git
+
+heroku config:add CL_IMPL=ccl --app heroku-dusque
+
+heroku config:add CL_WEBSERVER=hunchentoot --app heroku-dusque
+
+heroku config:add LANG=en_US.UTF-8 --app heroku-dusque
+
+# deploy 
+git push heroku master
