@@ -83,8 +83,7 @@ pushd $CACHE_DIR/repos
 # fi
 
 popd
-;;
-*)
+
 
 echo "-----> Installing $CL_IMPL"
 if [ ! -d $CL_DIR ]; then
