@@ -68,7 +68,7 @@ echo "-----> Starting build"
 #echo "\$CCL_DEFAULT_DIRECTORY/scripts/ccl64 -l $BUILDPACK_DIR/setup/compile.lisp" >> $ENVVARS
 echo "-----> Build finished"
 
-APPLICATION_LAUNCHER=$BUILD_DIR/lispapp
+APPLICATION_LAUNCHER="$BUILD_DIR/lispapp"
 #touch $APPLICATION_LAUNCHER
 chmod a+x $APPLICATION_LAUNCHER
 
