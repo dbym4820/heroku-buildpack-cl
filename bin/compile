@@ -117,7 +117,6 @@ echo "export BUILD_DIR" >> $ENVVARS
 
 touch $BUILD_DIR/lispapp
 
-sudo apt-get install roswell
 
 echo "-----> Starting build"
 case $CL_IMPL in
