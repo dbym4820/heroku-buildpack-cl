@@ -63,12 +63,11 @@ echo "-----> CL_WEBSERVER: $CL_WEBSERVER"
 echo "-----> Getting patched versions of libraries"
 
 mkdir $CACHE_DIR/repos    # should be under an if to avoid error
-pushd $CACHE_DIR/repos
-
 
 echo "###########################"
 ls -la $CACHE_DIR | echo
 echo "###########################"
+pushd $CACHE_DIR/repos
 
 # if [ -d $CACHE_DIR/repos/dusque ]; then
 #      echo 'dusque already present'
