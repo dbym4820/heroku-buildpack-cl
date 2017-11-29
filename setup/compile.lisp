@@ -14,8 +14,8 @@
       (load ql-setup)
       (progn
 	(load (make-pathname :directory (append *buildpack-dir* '("lib")) :defaults "quicklisp.lisp"))
-	(funcall (symbol-function (find-symbol "INSTALL" (find-package "QUICKLISP-QUICKSTART")))
-		 :path (make-pathname :directory (pathname-directory ql-setup))))))
+	(quicklisp-quickstart:install ".quicklisp/")
+	)))
 
 
 ;;; Load all .asd files in the repos subdirectory.  The compile script puts
@@ -38,6 +38,7 @@
 ;;; Default toplevel, app can redefine.
 (defun heroku-toplevel ()
   (initialize-application)
+  
   ;; Start the web server
   (let ((port (parse-integer (getenv "PORT"))))
     (format t "Listening on port ~A~%" port)
