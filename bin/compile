@@ -49,7 +49,7 @@ case $CL_IMPL in
   ccl)
     S3_BUCKET="cl-heroku"
     CL_PACKAGE="ftp://ftp.clozure.com/pub/release/1.11/ccl-1.11-linuxx86.tar.gz"
-    DECOMPRESS="tar xzf - -C $CL_DIR"
+    DECOMPRESS="tar -xzvf - -C $CL_DIR"
     export CCL_DEFAULT_DIRECTORY=$CL_DIR # overwrite CCL_DEFAULT_DIRECTORY on ccl64
     ;;
   *)
@@ -96,7 +96,7 @@ esac
 echo "-----> Installing $CL_IMPL"
 if [ ! -d $CL_DIR ]; then
     echo "-----> Fetching $CL_IMPL"
-    mkdir -p $CL_DIR  && wget $CL_PACKAGE | $DECOMPRESS
+    mkdir -p $CL_DIR  && wget $CL_PACKAGE --retr-symlinks | $DECOMPRESS
 fi
 
 # add to slug
