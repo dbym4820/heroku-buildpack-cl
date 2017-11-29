@@ -30,7 +30,7 @@ import_env CL_IMPL
 import_env CL_WEBSERVER
 import_env RESET_CACHE
 
-CL_DIR="$BUILDPACK_DIR/$CL_IMPL"
+CL_DIR="$CACHE_DIR/$CL_IMPL"
 echo "-----> compile params: $BUILD_DIR $CACHE_DIR $ENV_DIR"
 
 if [ $RESET_CACHE ]; then
