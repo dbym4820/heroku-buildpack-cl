@@ -59,43 +59,37 @@ esac
 
 echo "-----> CL_WEBSERVER: $CL_WEBSERVER"
 
-case $CL_WEBSERVER in
-  hunchentoot)
-    ;;
-  aserve)
-    # setting up paths for building
-    echo "-----> Getting patched versions of libraries"
+# setting up paths for building
+echo "-----> Getting patched versions of libraries"
 
-    mkdir $CACHE_DIR/repos    # should be under an if to avoid error
-    pushd $CACHE_DIR/repos
+mkdir $CACHE_DIR/repos    # should be under an if to avoid error
+pushd $CACHE_DIR/repos
 
-    
+
 echo "###########################"
 ls -la $CACHE_DIR | echo
 echo "###########################"
-    # if [ -d $CACHE_DIR/repos/dusque ]; then
-    #      echo 'dusque already present'
-    #      pushd dusque
-    #      git pull origin master
-    #      popd
-    # else
-    #     git clone git://github.com/dbym4820/heroku-dusque.git dusque
-    # fi
-    # if [ -d $CACHE_DIR/repos/hunchentoot ]; then
-    #      echo 'hunchentoot already present'
-    #      pushd hunchentoot
-    #      git pull origin master
-    #      popd
-    # else
-    #     git clone git://github.com/edicl/hunchentoot.git
-    # fi
 
-    popd
-    ;;
-  *)
-    echo "-----> ! Please set CL_WEBSERVER: heroku config:add CL_WEBSERVER={hunchentoot|aserve}."
-    exit 1
-esac
+# if [ -d $CACHE_DIR/repos/dusque ]; then
+#      echo 'dusque already present'
+#      pushd dusque
+#      git pull origin master
+#      popd
+# else
+#     git clone git://github.com/dbym4820/heroku-dusque.git dusque
+# fi
+# if [ -d $CACHE_DIR/repos/hunchentoot ]; then
+#      echo 'hunchentoot already present'
+#      pushd hunchentoot
+#      git pull origin master
+#      popd
+# else
+#     git clone git://github.com/edicl/hunchentoot.git
+# fi
+
+popd
+;;
+*)
 
 echo "-----> Installing $CL_IMPL"
 if [ ! -d $CL_DIR ]; then
