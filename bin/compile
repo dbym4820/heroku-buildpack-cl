@@ -73,11 +73,12 @@ popd
 
 mkdir -p $1/.profile.d
 ENVVARS=$1/.profile.d/build-env.sh
+touch $ENVVARS
 
-echo "export BUILDPACK_DIR" >> $ENVVERS
-echo "export CACHE_DIR" >> $ENVVERS
-echo "export BUILD_DIR" >> $ENVVERS
-echo "export CCL_DEFAULT_DIRECTORY=$CCL_DIR" >> $ENVVERS
+echo "export BUILDPACK_DIR" >> $ENVVARS
+echo "export CACHE_DIR" >> $ENVVARS
+echo "export BUILD_DIR" >> $ENVVARS
+echo "export CCL_DEFAULT_DIRECTORY={$CCL_DIR}" >> $ENVVARS
 
 echo "-----> Starting build"
 $CCL_DEFAULT_DIRECTORY/scripts/ccl64 -l "$BUILDPACK_DIR/setup/compile.lisp"
