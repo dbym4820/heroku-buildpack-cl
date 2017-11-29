@@ -70,6 +70,5 @@ echo "-----> Build finished"
 
 APPLICATION_LAUNCHER="$BUILD_DIR/lispapp"
 touch $APPLICATION_LAUNCHER
-cd $BUILD_DIR
-chmod a+x ~/tmp/lispapp # $APPLICATION_LAUNCHER
+chmod a+x $APPLICATION_LAUNCHER
 
