@@ -8,8 +8,8 @@
 (ccl:setenv "XDG_CACHE_HOME" (concatenate 'string (getenv "CACHE_DIR") "/.asdf/"))
 
 (let ((quicklisp-init (make-pathname :directory (append *cache-dir* '("quicklisp")) :defaults "setup.lisp")))
-  (when (probe-file quicklisp-init)
-    (load quicklisp-init)))
+  ;;(when (probe-file quicklisp-init)
+    (load quicklisp-init))
 
 (require :asdf)
 
