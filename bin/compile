@@ -107,7 +107,7 @@ echo "$CL_IMPL installed" | indent
 mkdir -p $1/.profile.d
 ENVVARS=$1/.profile.d/build-env.sh
 
-cd $CACHE_DIR/lib
+cd $CACHE_DIR
 curl -O https://beta.quicklisp.org/quicklisp.lisp
 
 export BUILDPACK_DIR
