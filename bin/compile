@@ -117,6 +117,8 @@ echo "export BUILD_DIR" >> $ENVVARS
 
 touch $BUILD_DIR/lispapp
 
+apt install roswell
+
 echo "-----> Starting build"
 case $CL_IMPL in
   sbcl) sh $CL_DIR/sbcl-1.2.13-x86-64-linux/run-sbcl.sh --load "$BUILDPACK_DIR/setup/compile.lisp";;

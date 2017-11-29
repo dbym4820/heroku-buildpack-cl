@@ -35,7 +35,6 @@
 (defun initialize-application ()
   )
 
-(format t "~A~%" (asdf:asdf-version))
 
 ;;; Default toplevel, app can redefine.
 (defun heroku-toplevel ()
