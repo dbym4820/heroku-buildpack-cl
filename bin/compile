@@ -77,6 +77,14 @@ case $CL_WEBSERVER in
     else
         git clone git://github.com/dbym4820/heroku-dusque.git
     fi
+    if [ -d $CACHE_DIR/repos/hunchentoot ]; then
+         echo 'wuwei already present'
+         pushd wuwei
+         git pull origin master
+         popd
+    else
+        git clone git://github.com/edicl/hunchentoote.git
+    fi
 
     popd
     ;;
