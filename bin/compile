@@ -33,10 +33,10 @@ import_env RESET_CACHE
 CL_DIR="$BUILDPACK_DIR/$CL_IMPL"
 echo "-----> compile params: $BUILD_DIR $CACHE_DIR $ENV_DIR"
 
-# if [ $RESET_CACHE ]; then
-#   echo "-----> flushing cache"
-#   rm -rf $CACHE_DIR/*
-# fi
+if [ $RESET_CACHE ]; then
+  echo "-----> flushing cache"
+  rm -rf $CACHE_DIR/*
+fi
 
 echo "-----> CL_IMPL: $CL_IMPL"
 
@@ -67,6 +67,7 @@ mkdir $CACHE_DIR/repos    # should be under an if to avoid error
 echo "###########################"
 ls -la $CACHE_DIR | echo
 echo "###########################"
+
 pushd $CACHE_DIR/repos
 
 # if [ -d $CACHE_DIR/repos/dusque ]; then
