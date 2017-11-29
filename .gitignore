@@ -2,3 +2,4 @@ quicklisp
 *.fasl
 *#
 push.sh
+r.sh

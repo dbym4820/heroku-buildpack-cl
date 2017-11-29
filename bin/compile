@@ -44,12 +44,12 @@ case $CL_IMPL in
   sbcl)
     S3_BUCKET="sbcl-heroku"
     CL_PACKAGE="https://s3.amazonaws.com/${S3_BUCKET}/sbcl-1.2.13-x86-64-linux-binary.tar.bz2"
-    DECOMPRESS="tar jxvf - -C $CL_DIR"
+    DECOMPRESS="tar Jxvf - -C $CL_DIR"
     ;;
   ccl)
     S3_BUCKET="cl-heroku"
     CL_PACKAGE="ftp://ftp.clozure.com/pub/release/1.11/ccl-1.11-linuxx86.tar.gz"
-    DECOMPRESS="tar -xzvf - -C $CL_DIR"
+    DECOMPRESS="tar -xzvf $CL_PACKAGE"
     export CCL_DEFAULT_DIRECTORY=$CL_DIR # overwrite CCL_DEFAULT_DIRECTORY on ccl64
     ;;
   *)
