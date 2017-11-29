@@ -48,7 +48,7 @@ case $CL_IMPL in
     ;;
   ccl)
     S3_BUCKET="cl-heroku"
-    CL_PACKAGE="http://${S3_BUCKET}.s3.amazonaws.com/ccl-1.7.tgz"
+    CL_PACKAGE="ftp://ftp.clozure.com/pub/release/1.11/ccl-1.11-linuxx86.tar.gz"
     DECOMPRESS="tar xzf - -C $CL_DIR"
     export CCL_DEFAULT_DIRECTORY=$CL_DIR # overwrite CCL_DEFAULT_DIRECTORY on ccl64
     ;;
