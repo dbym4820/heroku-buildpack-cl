@@ -69,22 +69,22 @@ case $CL_WEBSERVER in
     mkdir $CACHE_DIR/repos    # should be under an if to avoid error
     pushd $CACHE_DIR/repos
 
-    if [ -d $CACHE_DIR/repos/dusque ]; then
-         echo 'dusque already present'
-         pushd dusque
-         git pull origin master
-         popd
-    else
-        git clone git://github.com/dbym4820/heroku-dusque.git dusque
-    fi
-    if [ -d $CACHE_DIR/repos/hunchentoot ]; then
-         echo 'hunchentoot already present'
-         pushd hunchentoot
-         git pull origin master
-         popd
-    else
-        git clone git://github.com/edicl/hunchentoot.git
-    fi
+    # if [ -d $CACHE_DIR/repos/dusque ]; then
+    #      echo 'dusque already present'
+    #      pushd dusque
+    #      git pull origin master
+    #      popd
+    # else
+    #     git clone git://github.com/dbym4820/heroku-dusque.git dusque
+    # fi
+    # if [ -d $CACHE_DIR/repos/hunchentoot ]; then
+    #      echo 'hunchentoot already present'
+    #      pushd hunchentoot
+    #      git pull origin master
+    #      popd
+    # else
+    #     git clone git://github.com/edicl/hunchentoot.git
+    # fi
 
     popd
     ;;
